@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { userNameAtom, monCookieAtom } from "../atoms";
 
@@ -20,7 +21,11 @@ function Name() {
       
       <div>이번 달 몇 개의 쿠키를 소비할 예정인가요?</div>
       <input valutype="text" value={cookie} onChange={onCookieHandler} placeholder="이번 달의 쿠키"></input>
-
+      <button>
+        <Link to={{pathname: `/Choice/*`,}}>
+          다음으로
+        </Link>
+      </button>
     </>
   );
 }
