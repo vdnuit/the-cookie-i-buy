@@ -1,3 +1,4 @@
+//recoil 테스트용 theme입니다. 프로젝트 완료되면 삭제할 예정입니다.
 import { DefaultTheme } from "styled-components";
 
 export const darkTheme = {

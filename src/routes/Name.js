@@ -1,3 +1,4 @@
+//이름과 쿠키를 입력하면 이를 각 Atom에 저장하는 Name.js입니다.
 import { Link } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { userNameAtom, monCookieAtom } from "../atoms";

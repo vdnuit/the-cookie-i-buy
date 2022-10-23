@@ -1,3 +1,4 @@
+// 메인페이지입니다 Link를 이용해 다음으로 넘어가는 버튼을 둔 것을 볼 수 있습니다.
 import { Link } from "react-router-dom";
 
 function Main() {
