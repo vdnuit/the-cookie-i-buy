@@ -46,6 +46,7 @@ export const webtoonsAtom = atom({
       rend: 2, //대여 쿠키 개수
       have: 3, //소장 쿠키 개수
       isHave: false, //대여 혹은 소장 여부(기본값 대여)
+      value:0,
     },
     {
       key: 1,
@@ -54,6 +55,7 @@ export const webtoonsAtom = atom({
       rend: 3, //대여 쿠키 개수
       have: 4, //소장 쿠키 개수
       isHave: false, //대여 혹은 소장 여부(기본값 대여)
+      value:0,
     },
     {
       key: 2,
@@ -62,6 +64,7 @@ export const webtoonsAtom = atom({
       rend: 3, //대여 쿠키 개수
       have: 4, //소장 쿠키 개수
       isHave: false, //대여 혹은 소장 여부(기본값 대여)
+      value:0,
     },
   ],
     Tue: [],
@@ -76,5 +79,5 @@ export const webtoonsAtom = atom({
 //그 중 선택된 웹툰들이 여기에 저장됩니다.
 export const selectedAtom =atom({
   key: "Selected",
-  default: [],
+  default: new Array(),
 })

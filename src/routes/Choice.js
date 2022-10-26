@@ -2,30 +2,41 @@
 //전체적인 구조는 체크박스 클릭->해당 아이템 리스트에 복사->확인 버튼 클릭->리스트를 Atom에 복사 가 될 예정입니다.
 /*
 [미완료된 것]
-1. checkedItems submit 버튼 누르면 SelectedAtom으로 전송해아함.
+1. checkedItems submit 버튼 누르면 SelectedAtom으로 전송해아함. [완료]
 2. 현재 월요일 웹툰만 목록으로 적용된 상황. 다른 요일도 테스트 해보기
 3. styled component 미적용
 */
 import { Link } from "react-router-dom";
 import Webtoon from "./Webtoon";
 import { useRecoilState } from "recoil";
-import { webtoonsAtom } from "../atoms";
+import { webtoonsAtom, selectedAtom } from "../atoms";
 import {useState} from 'react';
 
 function Choice() {
   const [webtoons,setWebtoons] = useRecoilState(webtoonsAtom);
-  const [checkedItems, setCheckedItems] = useState(new Set());
+  const [selected,setSelected] = useRecoilState(selectedAtom);
+  const [checkedItems, setCheckedItems] = useState(new Array());
+  console.log(webtoons);
   const checkedItemHandler = (key, isChecked) => {
     if (isChecked) {
-      checkedItems.add(key);
+      checkedItems.push(key);
       setCheckedItems(checkedItems);
-    } else if (!isChecked && checkedItems.has(key)) {
-      checkedItems.delete(key);
+    } else if (!isChecked) {
+      for(var i = 0; i < checkedItems.length; i++){ 
+        if (checkedItems[i] === key) { 
+          checkedItems.splice(i, 1); 
+          i--; 
+        }
+      }
       setCheckedItems(checkedItems);
     }
-    
-    {console.log(checkedItems)}
+    console.log(checkedItems);
   };
+  const selectedHandler = (key, isChecked) => {
+    setSelected(checkedItems);
+    console.log(selected);
+  };
+   
   return (
     <>
     <div>좋아하는 웹툰을 선택해주세요.</div>
@@ -35,7 +46,7 @@ function Choice() {
         <Webtoon key={webtoon.id} webtoon={webtoon} checkedItemHandler={checkedItemHandler}></Webtoon>
       </>
     ))}
-    <button>
+    <button onClick={selectedHandler}>
       <Link to={{pathname: `/Like/*`,}}>
         다음으로
       </Link>
