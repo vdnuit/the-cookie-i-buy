@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Webtoon from "./Webtoon";
+import Webtoon from "../components/Webtoon";
 import { useRecoilState } from "recoil";
 import { selectedAtom } from "../atoms";
 import {useState, useEffect} from 'react';
@@ -19,6 +19,7 @@ function Like() {
     if (isChecked) {
       for(var i = 0; i < checkedItems.length; i++){ 
         if (checkedItems[i].key === key.key) { 
+          // 이거 key 말고 name 으로 바꿔야함 요일 별로 같은 key값이 있음... 아래도 마찬가지
           checkedItems.splice(i, 1); 
           i--;
         }
@@ -57,6 +58,7 @@ function Like() {
     {selected.map((webtoon, index) => (
       <>
         <Webtoon key={webtoon.id} webtoon={webtoon} checkedItemHandler={checkedItemHandler}></Webtoon>
+        <p>드롭다운</p>
       </>
     ))}
     <button onClick={selectedHandler}>

@@ -7,7 +7,7 @@
 3. styled component 미적용
 */
 import { Link } from "react-router-dom";
-import Webtoon from "./Webtoon";
+import Webtoon from "../components/Webtoon";
 import { useRecoilState } from "recoil";
 import { webtoonsAtom, selectedAtom } from "../atoms";
 import {useState} from 'react';

@@ -1,6 +1,6 @@
 /*
 [미완료된 것]
-1. 스크롤링해서 배열로 정리
+1. 크롤링해서 배열로 정리
   현재 더미데이터 3개 임시로 넣어둠.
 */
 //c언어의 전역 변수와 같이 모든 페이지에서 사용할 요소들을 선언하는 파일입니다.
@@ -25,14 +25,21 @@ export const monCookieAtom = atom({
   default: 0,
 });
 
+//웹툰 중 선택된 웹툰들이 여기에 저장됩니다.
+export const selectedAtom =atom({
+  key: "Selected",
+  default: new Array(),
+})
+
 //하나의 웹툰 아래에는 다음과 같은 정보들이 들어갈 예정입니다.
 // Webtoon {
 //   id: number; //인덱스
-//   img: text; //썸네일 이미지
-//   text: string; // 웹툰 제목
-//   rend: Number; //대여 쿠키 개수
-//   have: Number; //소장 쿠키 개수
-//   isHave: boolean; //대여 혹은 소장 여부(기본값 대여)
+//   img: text; //썸네일 이미지 (초기 값 요구)
+//   text: string; // 웹툰 제목 (초기 값 요구)
+//   rend: Number; //대여 쿠키 개수 (초기 값 요구)
+//   have: Number; //소장 쿠키 개수 (초기 값 요구)
+//   isHave: boolean; //대여 혹은 소장 여부 (초기 값 false)
+//   value: Number; //호감도 (등수 역순, 초기 값 0)
 // }
 
 // 위와 같은 웹툰이 아래와 같이 배열에 저장됩니다.
@@ -76,8 +83,3 @@ export const webtoonsAtom = atom({
   },
 });
 
-//그 중 선택된 웹툰들이 여기에 저장됩니다.
-export const selectedAtom =atom({
-  key: "Selected",
-  default: new Array(),
-})
