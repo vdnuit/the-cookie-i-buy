@@ -3,6 +3,8 @@ import Webtoon from "../components/Webtoon";
 import { useRecoilState } from "recoil";
 import { selectedAtom } from "../atoms";
 import {useState, useEffect} from 'react';
+import NumberPicker from "react-widgets/NumberPicker";
+import Name from './Name';
 
 // const PRODUCT_DATA = [
 //   { id: null, value: '등수를 선택하세요.' },
@@ -18,8 +20,7 @@ function Like() {
   const checkedItemHandler = (key, isChecked) => {
     if (isChecked) {
       for(var i = 0; i < checkedItems.length; i++){ 
-        if (checkedItems[i].key === key.key) { 
-          // 이거 key 말고 name 으로 바꿔야함 요일 별로 같은 key값이 있음... 아래도 마찬가지
+        if (checkedItems[i].name === key.name) { 
           checkedItems.splice(i, 1); 
           i--;
         }
@@ -33,7 +34,7 @@ function Like() {
       const copy = JSON.parse(JSON.stringify(key));
       copy["isHave"]=true;
       for(var i = 0; i < checkedItems.length; i++){ 
-        if (checkedItems[i].key === key.key) { 
+        if (checkedItems[i].name === key.name) { 
           checkedItems.splice(i, 1); 
           i--;
         }
@@ -50,15 +51,32 @@ function Like() {
     setSelected(checkedItems);
     console.log(selected);
   };
+  const valueHandler = (key, value,array) => {
+    for(var i = 0; i < checkedItems.length; i++){ 
+      if (checkedItems[i].name === key.name) { 
+        checkedItems.splice(i, 1); 
+        i--;
+      }
+    }
+    const copy = JSON.parse(JSON.stringify(key));
+    copy["value"]=array.length-value + 1;
+    checkedItems.push(copy);
+    setCheckedItems(checkedItems);
+    console.log(checkedItems);
+
+  }
   return (
     <>
     <h1>선호도 입력</h1>
     <p>각 웹툰의 등수를 매기고, 소장 여부 선택해주세요
 (기본값은 ‘대여’입니다.)</p>
-    {selected.map((webtoon, index) => (
+    {selected.map((webtoon, index, array) => (
       <>
         <Webtoon key={webtoon.id} webtoon={webtoon} checkedItemHandler={checkedItemHandler}></Webtoon>
-        <p>드롭다운</p>
+        <NumberPicker 
+        defaultValue={1}
+        max={array.length} min={1}
+        onChange={value => valueHandler(webtoon, value, array)}/>;
       </>
     ))}
     <button onClick={selectedHandler}>
