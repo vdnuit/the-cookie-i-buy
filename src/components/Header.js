@@ -19,7 +19,8 @@ function Header() {
   };
   return (
     <div>
-    <h1>{userName.appendEulReul()} 사는 쿠키</h1>
+      <h1>COOKIE I BUY</h1>
+      <p>{userName.appendEulReul()} 사는 쿠키</p>
 
     </div>
   );
