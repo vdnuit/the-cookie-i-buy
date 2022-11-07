@@ -2,6 +2,46 @@
 import { Link } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { userNameAtom, monCookieAtom } from "../atoms";
+import styled from "styled-components";
+
+const Container = styled.div`
+  background-color: #FAFAFA;
+  padding: 5vw;
+`;
+
+const Title = styled.h1`
+  letter-spacing: -0.5vh;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 100;
+  font-size: 8vh;
+  line-height: 10vh;
+  color: #464646;
+  margin: 2vw 0vw;
+`;
+const Detail = styled.p`
+  letter-spacing: -0.2vh;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 3vh;
+  line-height: 4vh;
+  color: #464646;
+`;
+const Questions = styled.div`
+  margin: 3vw 0vw;
+  display: flex;
+`;
+const Question = styled.h2`
+  letter-spacing: -0.2vh;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 6vh;
+  line-height: 7vh;
+  width: 45vw;
+  color: #464646;
+  min-width: 200px;
+`;
 
 function Name() {
   
@@ -16,18 +56,29 @@ function Name() {
   }
 
   return (
-    <>
-      <div>당신의 이름은 무엇인가요?</div>
-      <input valutype="text" value={name} onChange={onNameHandler} placeholder="유저이름"></input>
-      
-      <div>이번 달 몇 개의 쿠키를 소비할 예정인가요?</div>
-      <input valutype="text" value={cookie} onChange={onCookieHandler} placeholder="이번 달의 쿠키"></input>
+    <Container>
+      <Title>기본 정보를 입력해주세요!</Title>
+      <Detail>‘내가 사는 쿠키’가 최적의 쿠키 소비를 알려드릴 수 있게 기본 정보를 입력해주세요. <br />
+이름과 소비 예정인 쿠키 개수만 알려주시면 된답니다! <br />
+입력된 정보는 저장되지 않으니 걱정하시지 않으셔도 됩니다:-)</Detail>
+      <Questions>
+        <Question>
+          <p>당신의 이름은<br />무엇인가요?</p>
+          <input valutype="text" value={name} onChange={onNameHandler} placeholder="이름 입력"></input>
+        </Question>
+
+        <Question>
+          <p>이번 달 몇 개의<br/>쿠키를 소비할 예정인가요?</p>
+          <input valutype="text" value={cookie} onChange={onCookieHandler} placeholder="이번 달의 쿠키 개수"></input>
+        </Question>
+
+      </Questions>
       <button>
         <Link to={{pathname: `/Choice/*`,}}>
           다음으로
         </Link>
       </button>
-    </>
+    </Container>
   );
 }
     
