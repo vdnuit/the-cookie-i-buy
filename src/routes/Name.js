@@ -5,7 +5,7 @@ import { userNameAtom, monCookieAtom } from "../atoms";
 import styled from "styled-components";
 
 const Container = styled.div`
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   padding: 5vw;
 `;
 
@@ -33,7 +33,7 @@ const Questions = styled.div`
 `;
 const Question = styled.h2`
   letter-spacing: -0.2vh;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-style: normal;
   font-weight: 700;
   font-size: 6vh;
@@ -44,42 +44,59 @@ const Question = styled.h2`
 `;
 
 function Name() {
-  
   const [name, setNameAtom] = useRecoilState(userNameAtom);
   const [cookie, setCookieAtom] = useRecoilState(monCookieAtom);
 
-  const onNameHandler=(event) => {
+  const onNameHandler = (event) => {
     setNameAtom(event.currentTarget.value);
-  }
-  const onCookieHandler=(event) => {
+  };
+  const onCookieHandler = (event) => {
     setCookieAtom(event.currentTarget.value);
-  }
+  };
 
   return (
     <Container>
       <Title>기본 정보를 입력해주세요!</Title>
-      <Detail>‘내가 사는 쿠키’가 최적의 쿠키 소비를 알려드릴 수 있게 기본 정보를 입력해주세요. <br />
-이름과 소비 예정인 쿠키 개수만 알려주시면 된답니다! <br />
-입력된 정보는 저장되지 않으니 걱정하시지 않으셔도 됩니다:-)</Detail>
+      <Detail>
+        ‘내가 사는 쿠키’가 최적의 쿠키 소비를 알려드릴 수 있게 기본 정보를
+        입력해주세요. <br />
+        이름과 소비 예정인 쿠키 개수만 알려주시면 된답니다! <br />
+        입력된 정보는 저장되지 않으니 걱정하시지 않으셔도 됩니다:-)
+      </Detail>
       <Questions>
         <Question>
-          <p>당신의 이름은<br />무엇인가요?</p>
-          <input valutype="text" value={name} onChange={onNameHandler} placeholder="이름 입력"></input>
+          <p>
+            당신의 이름은
+            <br />
+            무엇인가요?
+          </p>
+          <input
+            valutype="text"
+            value={name}
+            onChange={onNameHandler}
+            placeholder="이름 입력"
+          ></input>
         </Question>
 
         <Question>
-          <p>이번 달 몇 개의<br/>쿠키를 소비할 예정인가요?</p>
-          <input valutype="text" value={cookie} onChange={onCookieHandler} placeholder="이번 달의 쿠키 개수"></input>
+          <p>
+            이번 달 몇 개의
+            <br />
+            쿠키를 소비할 예정인가요?
+          </p>
+          <input
+            valutype="text"
+            value={cookie}
+            onChange={onCookieHandler}
+            placeholder="이번 달의 쿠키 개수"
+          ></input>
         </Question>
-
       </Questions>
       <button>
-        <Link to={{pathname: `/Choice/*`,}}>
-          다음으로
-        </Link>
+        <Link to={{ pathname: `/Choice/*` }}>다음으로</Link>
       </button>
     </Container>
   );
 }
-    
+
 export default Name;

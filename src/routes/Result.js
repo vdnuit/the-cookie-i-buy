@@ -6,6 +6,7 @@ function Result() {
   const [cookies, setCookies] = useRecoilState(monCookieAtom);
   console.log(selected);
   console.log(cookies);
+  // 여기부터
   let finalResult = {
     weight: 0,
     optimalValue: 0,
@@ -13,12 +14,26 @@ function Result() {
   };
   let countNode = 0;
   let bounds = [];
-
+  let finalWebtoons = [];
+  // 여기까지 터치 금지
   let data = {
-    weights: [3, 2, 3, 4],
-    values: [2, 3, 100, 2],
+    weights: [],
+    values: [],
     limitWeight: cookies,
   };
+  for (var i = 0; i < selected.length; i++) {
+    data.values.push(selected[i].value);
+  }
+  for (i = 0; i < selected.length; i++) {
+    var weight = 0;
+    if (selected[i].isHave === true) {
+      weight = selected[i].have * 4;
+    }
+    if (selected[i].isHave === false) {
+      weight = selected[i].rend * 4;
+    }
+    data.weights.push(weight);
+  }
   const branchAndBound = (data) => {
     for (let i = data.values.length - 1; i >= 0; i--) {
       bounds = [data.values[i] + (bounds[0] || 0)].concat(bounds);
@@ -30,7 +45,6 @@ function Result() {
   };
 
   const validateBound = (tempArr, values, finalResult, bounds) => {
-    //calculate sum value
     let sumValue = 0;
     for (let i = 0; i < tempArr.length; i++) {
       if (tempArr[i] === 1) {
@@ -45,7 +59,6 @@ function Result() {
 
   const dfs = (tempArr, index, weights, values, limitWeight) => {
     countNode++;
-    //reach the end of state-space search tree
     if (index === weights.length) {
       let sumWeight = 0;
       let sumValue = 0;
@@ -77,7 +90,21 @@ function Result() {
 
   branchAndBound(data);
   console.log(finalResult);
-  return <div>Result</div>;
+  for (i = 0; i < finalResult.solution.length; i++) {
+    if (finalResult.solution[i] == 1) {
+      finalWebtoons.push(selected[i]);
+    }
+  }
+  console.log(finalWebtoons);
+  return (
+    <>
+      {finalWebtoons.map((webtoon) => (
+        <>
+          <p>{webtoon.name}</p>
+        </>
+      ))}
+    </>
+  );
 }
 
 export default Result;
