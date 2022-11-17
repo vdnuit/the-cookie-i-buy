@@ -6,10 +6,9 @@ import Name from "./routes/Name";
 import Choice from "./routes/Choice";
 import Like from "./routes/Like";
 import Result from "./routes/Result";
-
+import Header from "./components/Header";
 
 function Router() {
-
   return (
     <BrowserRouter>
       <Routes>
