@@ -5,41 +5,15 @@ import styled from "styled-components";
 
 const Container = styled.div`
   //배경에 대한 css
-  background-color: #61d271;
 `;
 const Title = styled.h1`
   //내가 사는 쿠키에 대한 css
-  //background-color: #61D271;
-  //width: 30vw;
-  //height: 33vh;
-
-  margin: 30vw;
-
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 1000;
-  font-size: 700%;
 `;
 const Detail = styled.p`
   //상세설명에 대한 css
-  position: absolute;
-  top: 43%;
-  left: 5%;
-
-  font-family: "Inter";
-  font-style: normal;
-  font-size: 100%;
 `;
 const Arrow = styled.img`
   //화살표 사진에 대한 css
-
-  position: absolute;
-  top: 20%;
-  left: 40%;
-
-  //height: 30px;
-  width: 200px;
-  object-fit: cover;
 `;
 
 function Main() {
