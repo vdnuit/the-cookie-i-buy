@@ -10,7 +10,8 @@ import Header from "./components/Header";
 
 function Router() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <Header />
       <Routes>
         <Route path="/" element={<Main />}></Route>
         <Route path="/Name/*" element={<Name />}></Route>
