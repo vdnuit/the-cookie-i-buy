@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/the-cookie-i-buy/static/js/main.fd4121c6.js",
+    "main.js": "/the-cookie-i-buy/static/js/main.f2689965.js",
     "static/js/787.4568e306.chunk.js": "/the-cookie-i-buy/static/js/787.4568e306.chunk.js",
     "index.html": "/the-cookie-i-buy/index.html",
-    "main.fd4121c6.js.map": "/the-cookie-i-buy/static/js/main.fd4121c6.js.map",
+    "main.f2689965.js.map": "/the-cookie-i-buy/static/js/main.f2689965.js.map",
     "787.4568e306.chunk.js.map": "/the-cookie-i-buy/static/js/787.4568e306.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.fd4121c6.js"
+    "static/js/main.f2689965.js"
   ]
 }
