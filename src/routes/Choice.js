@@ -10,11 +10,11 @@ import { Link } from "react-router-dom";
 import Webtoon from "../components/Webtoon";
 import { useRecoilState } from "recoil";
 import { webtoonsAtom, selectedAtom } from "../atoms";
-import {useState} from 'react';
+import { useState } from "react";
 
 function Choice() {
-  const [webtoons,setWebtoons] = useRecoilState(webtoonsAtom);
-  const [selected,setSelected] = useRecoilState(selectedAtom);
+  const [webtoons, setWebtoons] = useRecoilState(webtoonsAtom);
+  const [selected, setSelected] = useRecoilState(selectedAtom);
   const [checkedItems, setCheckedItems] = useState(new Array());
   console.log(webtoons);
   const checkedItemHandler = (key, isChecked) => {
@@ -22,10 +22,10 @@ function Choice() {
       checkedItems.push(key);
       setCheckedItems(checkedItems);
     } else if (!isChecked) {
-      for(var i = 0; i < checkedItems.length; i++){ 
-        if (checkedItems[i] === key) { 
-          checkedItems.splice(i, 1); 
-          i--; 
+      for (var i = 0; i < checkedItems.length; i++) {
+        if (checkedItems[i] === key) {
+          checkedItems.splice(i, 1);
+          i--;
         }
       }
       setCheckedItems(checkedItems);
@@ -36,24 +36,79 @@ function Choice() {
     setSelected(checkedItems);
     console.log(selected);
   };
-   
+
   return (
     <>
-    <div>좋아하는 웹툰을 선택해주세요.</div>
-    {/* 웹툰 정보들을 Webtoon으로 전송 */}
-    {webtoons.Mon.map((webtoon, index) => (
-      <>
-        <Webtoon key={webtoon.id} webtoon={webtoon} checkedItemHandler={checkedItemHandler}></Webtoon>
-      </>
-    ))}
-    <button onClick={selectedHandler}>
-      <Link to={{pathname: `/Like/*`,}}>
-        다음으로
-      </Link>
-    </button>
+      <div>좋아하는 웹툰을 선택해주세요.</div>
+      {/* 웹툰 정보들을 Webtoon으로 전송 */}
+      {webtoons.Mon.map((webtoon, index) => (
+        <>
+          <Webtoon
+            key={webtoon.id}
+            webtoon={webtoon}
+            checkedItemHandler={checkedItemHandler}
+          ></Webtoon>
+        </>
+      ))}
+      {webtoons.Tue.map((webtoon, index) => (
+        <>
+          <Webtoon
+            key={webtoon.id}
+            webtoon={webtoon}
+            checkedItemHandler={checkedItemHandler}
+          ></Webtoon>
+        </>
+      ))}
+      {webtoons.Wed.map((webtoon, index) => (
+        <>
+          <Webtoon
+            key={webtoon.id}
+            webtoon={webtoon}
+            checkedItemHandler={checkedItemHandler}
+          ></Webtoon>
+        </>
+      ))}
+      {webtoons.Thu.map((webtoon, index) => (
+        <>
+          <Webtoon
+            key={webtoon.id}
+            webtoon={webtoon}
+            checkedItemHandler={checkedItemHandler}
+          ></Webtoon>
+        </>
+      ))}
+      {webtoons.Fri.map((webtoon, index) => (
+        <>
+          <Webtoon
+            key={webtoon.id}
+            webtoon={webtoon}
+            checkedItemHandler={checkedItemHandler}
+          ></Webtoon>
+        </>
+      ))}
+      {webtoons.Sat.map((webtoon, index) => (
+        <>
+          <Webtoon
+            key={webtoon.id}
+            webtoon={webtoon}
+            checkedItemHandler={checkedItemHandler}
+          ></Webtoon>
+        </>
+      ))}
+      {webtoons.Sun.map((webtoon, index) => (
+        <>
+          <Webtoon
+            key={webtoon.id}
+            webtoon={webtoon}
+            checkedItemHandler={checkedItemHandler}
+          ></Webtoon>
+        </>
+      ))}
+      <button onClick={selectedHandler}>
+        <Link to={{ pathname: `/Like/*` }}>다음으로</Link>
+      </button>
     </>
-     
   );
 }
-    
+
 export default Choice;

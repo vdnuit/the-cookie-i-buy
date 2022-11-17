@@ -4,6 +4,8 @@ import { selectedAtom, monCookieAtom, userNameAtom } from "../atoms";
 function Result() {
   const [selected, setSelected] = useRecoilState(selectedAtom);
   const [cookies, setCookies] = useRecoilState(monCookieAtom);
+  const [name, setName] = useRecoilState(userNameAtom);
+
   console.log(selected);
   console.log(cookies);
   // 여기부터
@@ -98,9 +100,31 @@ function Result() {
   console.log(finalWebtoons);
   return (
     <>
+      <h1>
+        이번 달,
+        <br />
+        이렇게 쿠키를 구워보는 건 어때요?
+      </h1>
+      <p>
+        {name} 님이 입력해주신 정보들을 바탕으로 ‘내가 만든 쿠키’가 최적의 쿠키
+        소비 방법을 뽑아왔어요!
+        <br />
+        만족스러운 쿠키 소비가 되었으면 좋겠어요:-)
+      </p>
+      <h2>
+        이번 달 {cookies}개의 쿠키 소비 플랜입니다.
+        <br />
+        {finalResult.weight}개를 구워 {cookies - finalResult.weight}개가
+        남았습니다.
+      </h2>
       {finalWebtoons.map((webtoon) => (
         <>
+          <img src={webtoon.thumb} style={{ width: "100px" }} />
           <p>{webtoon.name}</p>
+          <p>
+            {webtoon.isHave === true ? "소장" : "대여"},{" "}
+            {webtoon.isHave === true ? webtoon.have * 4 : webtoon.rend * 4}
+          </p>
         </>
       ))}
     </>
