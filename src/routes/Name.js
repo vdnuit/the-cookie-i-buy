@@ -1,9 +1,10 @@
 //이름과 쿠키를 입력하면 이를 각 Atom에 저장하는 Name.js입니다.
+import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { userNameAtom, monCookieAtom } from "../atoms";
-import styled from "styled-components";
 import CookieImg from "../assets/CookieImg.png";
+
 const Container = styled.div`
   background-color: #fafafa;
   padding: 5vw;
