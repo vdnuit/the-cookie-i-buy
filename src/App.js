@@ -11,7 +11,7 @@ function App() {
   );
 }
 const GlobalStyle = createGlobalStyle`
-${reset}
+  ${reset}
   // font import
 
  `;
