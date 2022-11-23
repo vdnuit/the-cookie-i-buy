@@ -3,10 +3,10 @@ import Router from "./Router";
 import { darkTheme, lightTheme } from "./theme";
 import { useRecoilValue } from "recoil";
 import { isDarkAtom } from "./atoms";
-import reset from "styled-reset";
+// import reset from "styled-reset";
 
 const GlobalStyle = createGlobalStyle`
-${reset}
+
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
   // font import
 
