@@ -54,7 +54,7 @@ const Week = styled.span`
 `;
 const Day = styled.div`
   border: 1px solid grey;
-  padding: 2vw;
+  padding: 1vw;
   h3 {
     text-align: center;
     font-family: "Inter";
