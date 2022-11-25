@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/the-cookie-i-buy/static/css/main.87262240.css",
-    "main.js": "/the-cookie-i-buy/static/js/main.d27ac56b.js",
+    "main.js": "/the-cookie-i-buy/static/js/main.cae56059.js",
     "static/js/787.4568e306.chunk.js": "/the-cookie-i-buy/static/js/787.4568e306.chunk.js",
     "static/media/Inter.ttf": "/the-cookie-i-buy/static/media/Inter.aadb65ac45347ff46699.ttf",
     "static/media/Somi.png": "/the-cookie-i-buy/static/media/Somi.e2668c5b7764b71896cc.png",
@@ -12,11 +12,11 @@
     "static/media/CookieImg.png": "/the-cookie-i-buy/static/media/CookieImg.79e4fbb8d9696ee3ce27.png",
     "index.html": "/the-cookie-i-buy/index.html",
     "main.87262240.css.map": "/the-cookie-i-buy/static/css/main.87262240.css.map",
-    "main.d27ac56b.js.map": "/the-cookie-i-buy/static/js/main.d27ac56b.js.map",
+    "main.cae56059.js.map": "/the-cookie-i-buy/static/js/main.cae56059.js.map",
     "787.4568e306.chunk.js.map": "/the-cookie-i-buy/static/js/787.4568e306.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.87262240.css",
-    "static/js/main.d27ac56b.js"
+    "static/js/main.cae56059.js"
   ]
 }
