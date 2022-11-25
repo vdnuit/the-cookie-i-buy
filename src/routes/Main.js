@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import ArrowImg from "../assets/Arrow.png";
 import PagesImg from "../assets/Pages.png";
 import styled from "styled-components";
+import Seohyun from "../assets/Seohyun.png";
+import Somi from "../assets/Somi.png";
+import Eunseo from "../assets/Eunseo.png";
+import Chaeyoung from "../assets/Chaeyoung.png";
 
 const Container = styled.div`
   //배경에 대한 css
@@ -12,7 +16,7 @@ const Container = styled.div`
       rgba(73, 147, 83, 0) 71.74%
     ),
     #61d271;
-  height: 200vh;
+  height: 120vh;
   overflow: hidden;
 `;
 const Title = styled.h1`
@@ -48,12 +52,70 @@ const Detail = styled.p`
   line-height: 5vh;
 `;
 const Pages = styled.img`
-  //상세설명에 대한 css
-
-  width: 100vw;
-  height: 150vh;
+  margin-top: -15vh;
+  width: 100%;
+  height: 30vh;
 `;
+const White = styled.div`
+  background-color: #fafafa;
+  margin-top: -1vh;
+  padding-bottom: 10vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+`;
+const MText = styled.div`
+  margin: 3vw;
+  h3 {
+    font-family: "Inter";
+    font-weight: 900;
+    font-size: 10vh;
+    margin: 4.5vh 3vw;
+    letter-spacing: -0.3vh;
+    line-height: 10vh;
+  }
+  p {
+    text-align: center;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2vh;
+    line-height: 27px;
 
+    color: #00e063;
+  }
+`;
+const Members = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+`;
+const Member = styled.div`
+  margin: 1vw;
+  img {
+    width: 23vh;
+    margin-top: 7vh;
+  }
+  h1 {
+    text-align: center;
+    font-family: "Inter";
+    font-weight: 900;
+    font-size: 3vw;
+    margin: 4.5vh 1vw;
+    letter-spacing: -0.3vh;
+    line-height: 1vw;
+  }
+  p {
+    text-align: center;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 3vh;
+    line-height: 27px;
+
+    color: #00e063;
+  }
+`;
 function Main() {
   return (
     <>
@@ -70,8 +132,43 @@ function Main() {
           <br />
           합리적인 쿠키 소비를 위한 최적의 쿠키 소비 플랜을 제공합니다.
         </Detail>
-        <Pages src={PagesImg} />
       </Container>
+
+      <Pages src={PagesImg} />
+      <White>
+        <MText>
+          <h3>
+            People
+            <br />
+            baking
+            <br />
+            Cookie
+          </h3>
+          <p>김이강 팀의 조원들을 소개합니다.</p>
+        </MText>
+        <Members>
+          <Member>
+            <img src={Seohyun} alt="Seohyun" />
+            <h1>강서현</h1>
+            <p>메인 코더/배포</p>
+          </Member>
+          <Member>
+            <img src={Somi} alt="Somi" />
+            <h1>김소미</h1>
+            <p>UX/UI</p>
+          </Member>
+          <Member>
+            <img src={Eunseo} alt="Eunseo" />
+            <h1>김은서</h1>
+            <p>조장/서브 코더</p>
+          </Member>
+          <Member>
+            <img src={Chaeyoung} alt="Chaeyoung" />
+            <h1>이채영</h1>
+            <p>데이터 수집</p>
+          </Member>
+        </Members>
+      </White>
     </>
   );
 }
