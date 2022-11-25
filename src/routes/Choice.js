@@ -108,7 +108,10 @@ function Choice() {
         <Link to={{ pathname: `/Like/*` }}>
           <img src={CookieImg} style={{ width: "10vh", margin: "1vh" }} />
         </Link>
-        <p>쿠키를 눌러주세요!</p>
+        <p>
+          선택완료 후, <br />
+          쿠키를 눌러주세요!
+        </p>
       </Button>
       <Week>
         <Day>

@@ -2504,16 +2504,6 @@ export const webtoonsAtom = atom({
         value: 0,
       },
       {
-        key: 2,
-        thumb:
-          "https://shared-comic.pstatic.net/thumb/webtoon/799442/thumbnail/thumbnail_IMAG21_3b096ca5-ff2d-482a-84f9-30d57cdc2b91.jpg",
-        name: "2022 몰래보는 로맨스", // 웹툰 제목
-        rend: 0, //대여 쿠키 개수
-        have: 0, //소장 쿠키 개수
-        isHave: false, //대여 혹은 소장 여부(기본값 대여)
-        value: 0,
-      },
-      {
         key: 3,
         thumb:
           "https://shared-comic.pstatic.net/thumb/webtoon/748105/thumbnail/thumbnail_IMAG21_87f84b6f-a211-4940-8684-f4b8731357eb.jpg",
