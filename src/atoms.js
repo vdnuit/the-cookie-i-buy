@@ -3338,7 +3338,7 @@ export const webtoonsAtom = atom({
       {
         key: 2,
         thumb:
-          "https://shared-comic.pstatic.net/thumb/webtoon/790713/thumbnail/thumbnail_IMAG21_3919364435331003700.jpg",
+          "https://shared-comic.pstatic.net/thumb/webtoon/776601/thumbnail/thumbnail_IMAG21_7365135131254864183.jpg",
         name: "광마회귀", // 웹툰 제목
         rend: 3, //대여 쿠키 개수
         have: 5, //소장 쿠키 개수

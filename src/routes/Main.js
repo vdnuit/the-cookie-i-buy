@@ -16,7 +16,7 @@ const Container = styled.div`
       rgba(73, 147, 83, 0) 71.74%
     ),
     #61d271;
-  height: 120vh;
+  padding-bottom: 20vh;
   overflow: hidden;
 `;
 const Title = styled.h1`
