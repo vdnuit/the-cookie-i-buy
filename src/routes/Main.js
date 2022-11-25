@@ -19,7 +19,7 @@ const Title = styled.h1`
   letter-spacing: -0.5vw;
   font-family: Inter;
   font-style: normal;
-  font-weight: 1000;
+  font-weight: 900;
   font-size: 12vw;
   color: #ffffff;
   margin: 10vh 6vw;

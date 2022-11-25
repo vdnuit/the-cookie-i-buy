@@ -16,9 +16,8 @@ const Title = styled.h1`
   //CookieIBuy에 대한 css
   text-align: center;
   color: white;
-  font-family: Inter;
-  font-style: normal;
-  font-weight: 1000;
+  font-family: "Inter";
+  font-weight: 900;
   font-size: 4vh;
   margin: 4.5vh 3vw;
   letter-spacing: -0.1vh;
@@ -28,6 +27,8 @@ const Title = styled.h1`
 const Detail = styled.p`
   //내가 만든 쿠키에 대한 css (오른쪽 정렬이 필수입니다. 글자수가 변하기 때문에..)
   color: white;
+
+  font-family: "Inter";
   font-size: 3.5vh;
   margin: 6vh 3vw;
 `;
