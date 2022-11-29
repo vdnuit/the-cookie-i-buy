@@ -34,6 +34,7 @@ function Router() {
           element={<Result />}
           errorElement={<Main />}
         ></Route>
+        <Route path={"*"} component={Main} />
       </Routes>
     </BrowserRouter>
   );
