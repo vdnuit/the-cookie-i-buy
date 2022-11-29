@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { userNameAtom, monCookieAtom } from "../atoms";
 import CookieImg from "../assets/CookieImg.png";
-
+import { useEffect } from "react";
 const Container = styled.div`
   background-color: #fafafa;
   padding: 5vw;
@@ -64,7 +64,9 @@ const Button = styled.div`
 function Name() {
   const [name, setNameAtom] = useRecoilState(userNameAtom);
   const [cookie, setCookieAtom] = useRecoilState(monCookieAtom);
-
+  useEffect(() => {
+    setNameAtom("");
+  }, []);
   const onNameHandler = (event) => {
     setNameAtom(event.currentTarget.value);
   };
