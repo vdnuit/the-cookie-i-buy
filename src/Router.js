@@ -13,11 +13,27 @@ function Router() {
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Header />
       <Routes>
-        <Route path="/" element={<Main />}></Route>
-        <Route path="/Name/*" element={<Name />}></Route>
-        <Route path="/Choice/*" element={<Choice />}></Route>
-        <Route path="/Like/*" element={<Like />}></Route>
-        <Route path="/Result/*" element={<Result />}></Route>
+        <Route path="/" element={<Main />} errorElement={<Main />}></Route>
+        <Route
+          path="/Name/*"
+          element={<Name />}
+          errorElement={<Main />}
+        ></Route>
+        <Route
+          path="/Choice/*"
+          element={<Choice />}
+          errorElement={<Main />}
+        ></Route>
+        <Route
+          path="/Like/*"
+          element={<Like />}
+          errorElement={<Main />}
+        ></Route>
+        <Route
+          path="/Result/*"
+          element={<Result />}
+          errorElement={<Main />}
+        ></Route>
       </Routes>
     </BrowserRouter>
   );
